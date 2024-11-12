@@ -1,0 +1,362 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans");
+:root {
+    --blue: rgb(0, 100, 214);
+    --politic: rgb(46, 145, 0); 
+    --sante: rgb(197, 0, 0); 
+}
+
+.Santé {
+    color: var(--sante);
+}
+
+.Politique {
+    color: var(--politic);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+       supported by Chrome, Edge, Opera and Firefox */
+    cursor: pointer;
+}
+
+#scrollPanel {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+    scroll-snap-type: y mandatory;
+}
+
+#main {
+    padding: 8px;
+    max-width: 1200px;
+    min-width: 360px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 8px;
+    height: 100vh;
+    background-color: rgb(239, 239, 239);
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 10px;
+    border: 1px solid #ccc;
+    border-radius: 9px;
+    background-color: white;
+    width: 100%;
+    height: 60px;
+    padding: 8px;
+    align-items: center;
+}
+#header .titleContainer,
+#header #filterContainer,
+#header .headerOptions{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+#actionTitle{
+    font-weight: bold;
+    margin-bottom: inherit;
+}
+#postFilter{
+    width: 100%;
+    padding: 5px 40px 5px 5px;
+    font-size: 12px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    font-size: 1.1rem;
+    font-family: Open Sans, FontAwesome, sans-serif;
+    position: relative;
+    margin-bottom: inherit !important;
+    box-sizing: border-box;
+}
+#filterContainer span{
+    position: absolute;
+    color:rgb(0, 87, 204);
+    cursor: pointer;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+#filterContainer{
+    position: relative;
+    width: 40%;
+}
+#searchBtn{
+    position: absolute;
+    top: 0;
+    right: -15px;
+    cursor: pointer;
+}
+#content {
+    border: 1px solid #ccc;
+    border-radius: 9px;
+    width: 100%;
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+    scroll-snap-type: y mandatory;
+    background-color: white;
+    padding-bottom: 8px;
+}
+
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.PostdeleteForm {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.formButtons {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    gap: 10px;
+}
+
+#deletePost {
+    background-color: rgb(224, 0, 0);
+    border: none;
+}
+
+#deletePost:hover {
+    background-color: rgb(185, 0, 0);
+}
+
+.contactRow {
+    padding: 8px;
+    padding-bottom: 0px;
+    scroll-snap-align: start;
+}
+
+.postsContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.postContainer {
+    display: flex;
+    background-color: rgba(0,0,0,0.05);
+    padding: 10px;
+    border-radius: 6px;
+    margin: 20px 10px 0;
+    max-width: 700px;
+}
+
+.post {
+    width: 100%;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    height:max-content;
+}
+
+.postHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 12px;
+    height: 20px;
+    align-items: center;
+    font-weight:bold;
+    text-transform: uppercase;
+    color: var(--blue);
+}
+
+.postImgContainer {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+    height: 500px;
+}
+
+.postTitle {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.postDate {
+    font-size: 10px;
+    display: inline-block;
+    color: grey;
+}
+
+.postDate::first-letter {
+    text-transform: uppercase;
+}
+
+.postImg {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.PostCommandPanel {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.PostCommandPanel .cmdIcon {
+    font-size: 12px !important;
+    background-color: var(--blue);
+    -webkit-text-fill-color: white !important;
+    padding: 5px 7px;
+    border-radius: 5px;
+    margin: 0;
+}
+
+.waitingGifcontainer {
+    text-align: center;
+    margin: auto;
+}
+
+.waitingGif {
+    height: 300px;
+}
+
+.postContainer .cmdIcon {
+    display: none;
+}
+
+.postContainer:hover .cmdIcon {
+    display: block;
+}
+
+.postLayout {
+    display: grid;
+    grid-template-columns: 100px auto;
+    padding: 10px;
+    gap: 8px;
+    align-items: center;
+}
+
+.postInfo {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 10px;
+    gap: 8px;
+    align-items: center;
+}
+.postommandPanel {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.cmdIcon {
+    font-size: 1.5rem;
+    -webkit-text-stroke-color: white;
+    -webkit-text-fill-color: rgb(0, 87, 204);
+    text-align: center;
+    margin: 8px;
+    cursor: pointer;
+}
+
+.menuIcon {
+    -webkit-text-fill-color: rgb(0, 87, 204);
+}
+
+.appLogo {
+    height: 40px;
+}
+
+@media screen and (min-width:650px) {
+
+    .postInfo {
+        grid-template-columns: 40% 35% auto;
+    }
+}
+.avatar {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90px;
+    height: 90px;
+    border-radius: 90px;
+}
+
+form {
+    padding: 20px;
+    max-width: 350px;
+    margin: auto;
+}
+
+.errorContainer {
+    font-size: 1.2rem;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    color: red;
+    padding: 20px;
+}
+
+.postdeleteForm {
+    margin: 20px;
+}
+
+.aboutContainer {
+    padding: 20px;
+    text-align: center;
+}
+
+.aboutContainer p {
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+input, textarea {
+    margin-bottom: 20px !important;
+}
+
+.postContainer a {
+    text-decoration: none !important;
+    color: white !important;
+}
+
+a {
+    text-decoration: none !important;
+}
