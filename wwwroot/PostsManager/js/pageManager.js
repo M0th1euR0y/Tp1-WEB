@@ -6,27 +6,27 @@ class PageManager {
         this.itemLayout = itemLayout;
         this.currentPage = { limit: -1, offset: -1 };
         this.resizeTimer = null;
-        this.resizeEndTriggerDelai = 300;
+        this.resizeEndTriggerDelay = 300;
         this.getItems = getItemsCallBack;
-        this.installViewportReziseEvent();
+        this.installViewportResizeEvent();
         this.reset();
     }
     reset() {
         this.resetScrollPosition();
         this.update(false);
     }
-    installViewportReziseEvent() {
+    installViewportResizeEvent() {
         let instance = this;
         $(window).on('resize', function (e) {
             clearTimeout(instance.resizeTimer);
-            instance.resizeTimer = setTimeout(() => { instance.update(false); }, instance.resizeEndTriggerDelai);
+            instance.resizeTimer = setTimeout(() => { instance.update(false); }, instance.resizeEndTriggerDelay);
         });
     }
     setCurrentPageLimit() {
-        let nbColumns = Math.trunc(this.scrollPanel.innerWidth() / this.itemLayout.width);
-        if (nbColumns < 1) nbColumns = 1;
-        let nbRows = Math.round(this.scrollPanel.innerHeight() / this.itemLayout.height);
-        this.currentPage.limit = nbRows * nbColumns + nbColumns /* make sure to always have a content overflow */;
+        let numColumns = Math.trunc(this.scrollPanel.innerWidth() / this.itemLayout.width);
+        if (numColumns < 1) numColumns = 1;
+        let numRows = Math.round(this.scrollPanel.innerHeight() / this.itemLayout.height);
+        this.currentPage.limit = numRows * numColumns + numColumns /* make sure to always have a content overflow */;
     }
     currentPageToQueryString(append = false) {
         this.setCurrentPageLimit();

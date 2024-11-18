@@ -71,11 +71,14 @@ export default class Response {
         this.res.writeHead(200, { 'content-type': 'text/html' });
         return this.end(content);
     }
-    accepted() { return this.status(202); } // accepted status
+    accepted(obj = null) { 
+        this.res.writeHead(202, { 'content-type': 'application/json' });
+        return (obj != null? this.end(JSON.stringify(obj)) : this.end());
+    } // accepted status
     deleted() { return this.status(202); }  // accepted status
-    created(jsonObj) {                      // created status
+    created(obj) {                      // created status
         this.res.writeHead(201, { 'content-type': 'application/json' });
-        return this.end(JSON.stringify(jsonObj));
+        return this.end(JSON.stringify(obj));
     }
     content(contentType, content) {         // let the browers cache locally the receiverd content
         this.res.writeHead(200, { 'content-type': contentType, "Cache-Control": "public, max-age=31536000" });

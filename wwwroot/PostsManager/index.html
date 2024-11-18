@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionnaire de publications</title>
+
+    <link rel="site.webmanifest" href="manifest.json" />
+    <link rel="icon" href="post_logo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <div class="titleContainer">
+                <img src="post_logo.png" class="appLogo" alt="Gestionnaire de publications" title="Gestionnaire de publications">
+                <h4 id="actionTitle">Liste des publications</h4>
+            </div>
+            <div id="filterContainer">
+                <input type="text" name="postFilter" id="postFilter" placeholder="&#xf002; Rechercher...">
+                <span id="searchBttn"><i class="fa fa-search fa-xl"></i></span>
+            </div>
+            <div class="headerOptions">
+                <i class="cmdIcon fa fa-plus" id="createPost" title="Ajouter une publication"></i>
+                <i class="cmdIcon fa fa-times" id="abort" title="Annuler"></i>
+                <div class="dropdown ms-auto">
+                    <div data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="cmdIcon fa fa-ellipsis-vertical"></i>
+                    </div>
+                    <div class="dropdown-menu noselect" id="DDMenu">
+                        <div class="dropdown-item menuItemLayout" id="aboutCmd">
+                            <i class="menuIcon fa fa-info-circle mx-2"></i> À propos...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content">
+            <div id="scrollPanel">
+                <div id="postsPanel" class="postsContainer">
+                    <!-- Used for items size -->
+                    <div id="sample" class="postRow" post_id="sample">
+                        <div class="postContainer">
+                            <div class="post noselect">
+                                <div class="postHeader">
+                                    <div class="postCategory Politique">sample</div>
+                                    <div class="PostCommandPanel">
+                                        <span class="editCmd cmdIcon fa-solid fa-pen" editpostid="sample" title="Modifier sample"></span>
+                                        <span class="deleteCmd cmdIcon fa-solid fa-trash" deletepostid="sample" title="Effacer sample"></span>
+                                    </div>
+                                </div>
+                                <div class="postTitle">sample</div>
+                                <div class="postImgContainer"><img src="" class="postImg" alt="Image de la publication"></div>
+                                <div class="postDate">sample</div>
+                                <div class="postDescription">sample</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="forms">
+                <div id="postForm"></div>
+                <div id="errorContainer" class="errorContainer"></div>
+                <div id="aboutContainer" class="aboutContainer">
+                    <h2>Gestionnaire de publications</h2>
+                    <hr>
+                    <p>Auteurs: Mathieu Roy</p>
+                    <p>Collège Lionel-Groulx, Automne 2024</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="js/Posts_API.js"></script>
+    <script src="js/pageManager.js"></script>
+    <script src="js/ImageControl.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/appUI.js"></script>
+</body>
+</html>
